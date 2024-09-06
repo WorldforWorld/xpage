@@ -1,7 +1,24 @@
 .learn {
+  margin: 0 20px;
+  padding: 32px;
+  border-radius: var(--border-radius);
+  background-color: var(--color-light);
+  &__inner {
+    display: flex;
+    column-gap: 16px;
+  }
   &__list {
     display: grid;
     grid-template-rows: auto auto;
     row-gap: 20px;
+  }
+  &__left {
+    width: 100%;
+    min-width: calc(100% - 562px);
+  }
+  &__right {
+    border-left: 1px solid var(--color-gray-border);
+    padding-left: 16px;
+    width: 100%;
   }
 }

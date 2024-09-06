@@ -7,10 +7,11 @@ mixin newsGenerate(data)
             if data.img !== ''
                 .news__image 
                     img(src=data.img alt="news-1")
-            if data.descr !== ''
-                h4.news__descr= data.descr
-            if data.tikers !== ''
-                ul.news__list
-                    each tiker in data.tikers
-                        li.news__item
-                            span.news__item-tiker.tiker= tiker
+            .news__content
+                if data.descr !== ''
+                    h4.news__descr= data.descr
+                if data.tikers !== ''
+                    ul.news__list
+                        each tiker in data.tikers
+                            li.news__item
+                                span.news__item-tiker.tiker= tiker

@@ -4,6 +4,22 @@
   overflow: hidden;
   color: var(--color-light);
   max-height: 610px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
   &::before {
     content: "";
     position: absolute;
@@ -21,11 +37,14 @@
   }
   &__list,
   &__title {
-    position: absolute;
-    left: 24px;
+    // position: absolute;
+    // left: 24px;
+    position: relative;
   }
   &__title {
-    top: 24px;
+    // top: 24px;
+    margin-bottom: 27%;
+    padding-bottom: 30px;
     max-width: 881px;
     @include fluid-text(48, 20);
     text-transform: uppercase;
@@ -38,7 +57,7 @@
     column-gap: 4px;
     row-gap: 5px;
     max-width: 545px;
-    bottom: 24px;
+    // bottom: 24px;
   }
   &__item {
     &-tiker {
