@@ -1,0 +1,18 @@
+.menu-button {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  cursor: pointer;
+}
+.menu-icon {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu-icon div {
+  background-color: var(--color-dark);
+  height: 2px;
+  width: 100%;
+}

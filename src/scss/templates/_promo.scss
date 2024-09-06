@@ -1,0 +1,120 @@
+.promo {
+  &__inner {
+    position: relative;
+    padding: 0 20px;
+    @include tablet {
+      padding: 0 10px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 0;
+      width: calc(100% - 40px);
+      height: 100%;
+      display: block;
+      border-radius: var(--border-radius);
+      background: linear-gradient(
+        180deg,
+        rgba(var(--color-dark-rbg), 0) 27.88%,
+        rgba(var(--color-dark-rbg), 0.3) 100%
+      );
+      z-index: 1;
+
+      @include tablet {
+        left: 10px;
+        width: calc(100% - 20px);
+      }
+    }
+  }
+  &__image {
+    &-item {
+      position: relative;
+      display: none;
+      height: calc(100vh - 112px);
+      min-height: 338px;
+      color: var(--color-light);
+
+      @include tablet {
+        height: calc(100vh - 80px);
+      }
+      @include mobile {
+        min-height: 264px;
+      }
+      img {
+        object-fit: cover;
+        object-position: top center;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--border-radius);
+        @include tablet {
+          border-radius: 10px;
+        }
+      }
+      &--active {
+        display: block;
+      }
+    }
+    &-title {
+      position: absolute;
+      bottom: 132px;
+      left: 20px;
+      max-width: 1065px;
+      @include fluid-text(80, 26);
+      line-height: 1.2;
+      z-index: 1;
+      @include mobile {
+        bottom: 158px;
+      }
+    }
+  }
+  &__button {
+    &-list {
+      position: absolute;
+      left: 40px;
+      bottom: 20px;
+      display: flex;
+      gap: 8px;
+      width: calc(100% - 80px);
+      z-index: 1;
+      @include tablet {
+        left: 20px;
+        width: calc(100% - 40px);
+      }
+      @include mobile {
+        flex-wrap: wrap;
+      }
+    }
+    &-item {
+      position: relative;
+      padding: 20px 46px 20px 24px;
+      width: -webkit-fill-available;
+      background-color: var(--color-light);
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: color ease var(--transition-duration),
+        background-color ease var(--transition-duration);
+      user-select: none;
+      @include mobile {
+        padding: 10px 46px 10px 14px;
+        border-radius: 10px;
+      }
+      svg {
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: transparent;
+        transition: color ease var(--transition-duration);
+      }
+      @include hover {
+        color: var(--color-light);
+        background-color: var(--color-accent);
+        svg {
+          color: var(--color-light);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+mixin advantages(data)
+    article.advantages(class=data.img !== '' ? '' : 'advantages--no-image')
+            if data.img !== ''
+                .advantages__image
+                    img(src=data.img, alt="learn")
+            h3.advantages__title=data.title
+            ul.advantages__list
+                each tiker in data.tikers
+                    li.advantages__item
+                        span.advantages__item-tiker.tiker= tiker

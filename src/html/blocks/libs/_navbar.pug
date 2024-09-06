@@ -1,0 +1,16 @@
+mixin logo(pathLogo,  classes='', href='/',)
+    a.logo(href=`${href}` class=`${classes}`)
+        img(src=pathLogo, alt="logo")
+
+mixin navbar(classes='')
+    nav(class=`${classes}`)
+        if block
+            block
+mixin navbar-burger(classes='')
+    .menu-button(class=classes)
+        .menu-icon
+            div
+            div
+            div
+        span МЕНЮ
+        

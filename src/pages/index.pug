@@ -1,0 +1,132 @@
+extends ../html/layout
+
+block variables
+    -
+        var dataPromo = {
+            contents: [
+                {
+                    src: './assets/images/promo-1.webp',
+                    text: 'Найди с кем поиграть в баскет',
+                    isActive: true,
+                },
+                {
+                    src: './assets/images/promo-2.webp',
+                    text: 'Учись думать о мячике',
+                    isActive: false,
+                },
+                {
+                    src: './assets/images/promo-3.webp',
+                    text: 'Смотри кусая губу',
+                    isActive: false,
+                },
+            ],
+            buttons: ['Играй', 'Учись', 'Смотри']
+        }
+    
+    -
+        var dataGame = [
+            {
+                link: '#',
+                image: './assets/images/game-1.png',
+                title: 'Найди себе команду',
+                descr: 'Игры на районе - это возможность найти с кем поиграть в баскетбол в выходные, или создать свою игру и пригласить других игроков присоединиться.',
+                textButton: 'текст кнопки',
+            },
+            {
+                link: '#',
+                image: './assets/images/game-2.png',
+                title: 'Создавай команды',
+                descr: 'Игры на районе - это возможность найти с кем поиграть в баскетбол в выходные, или создать свою игру и пригласить других игроков присоединиться.',
+                textButton: 'текст кнопки',
+            },
+            {
+                link: '#',
+                image: './assets/images/game-3.png',
+                title: 'Участвуй в турнирах',
+                descr: 'Участвуйте в турнирах вместе с вашей командой. Будьте активными, побеждайте и получайте ачивки и призы от наших спонсоров.',
+                textButton: 'текст кнопки',
+            },
+        ]
+    -
+        var dataLearn = [
+            {
+                img: './assets/images/learn-1.webp',
+                title: 'мы собрали секции для детей по всему городу',
+                tikers: [
+                    '12 секций по всему городу',
+                ],
+            },
+            {
+                img: '',
+                title: 'Подбери тренера под свой  уровень',
+                tikers: [
+                    'детская тренировка',
+                    'для начинающих',
+                    'стритбол',
+                    'выезд тренера на дом',
+                    '12 фильтров',
+                ],
+            },
+        ]
+    -
+        var dataNews = [
+            {
+                title: 'Видеоуроки',
+                link: '#',
+                img: './assets/images/news-1.png',
+                descr: 'Евгений Воронов: «Бронзовые медали - оценка труда нашей команды»',
+                tikers: [
+                    '26 октября',
+                ],
+            },
+            {
+                title: 'статьи',
+                link: '#',
+                img: '',
+                descr: 'Евгений Воронов: «Бронзовые медали - оценка труда нашей команды»',
+                tikers: [
+                    '26 октября',
+                ],
+            },
+            {
+                title: 'термины',
+                link: '#',
+                img: '',
+                descr: '',
+                tikers: [
+                    'треха',
+                    'трехочковый бросок',
+                    '36 терминов',
+                ],
+            },
+        ]
+
+block content
+    +header
+    main
+        section.promo
+            .promo__inner
+                +promo(dataPromo)
+        
+        section.game 
+            +header-section('Играй', 'game-header', 'header-link--red')
+            .game-inner 
+                ul.game-list
+                    each game in dataGame
+                        li.game-item
+                            +cardGame(game.link, game.image, game.title, game.descr, game.textButton)
+        section.learn 
+            +header-section('Учись', 'game-header', 'header-link--green')
+            .learn__inner 
+                .learn__left
+                    ul.learn__list
+                        each learnItem in dataLearn
+                            li.learn__item
+                                +advantages(learnItem)
+                .learn__right
+                    ul.blog__list
+                        each dataItem in dataNews
+                            li.blog__item 
+                                +newsGenerate(dataItem)
+        footer 
+            +header-section('Учись', 'game-header', 'header-link--green')

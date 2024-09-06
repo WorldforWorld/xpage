@@ -1,0 +1,7 @@
+.learn {
+  &__list {
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 20px;
+  }
+}

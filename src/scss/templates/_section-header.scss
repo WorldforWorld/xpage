@@ -1,0 +1,9 @@
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  &__title {
+    margin: 0;
+    @include fluid-text(80, 26);
+  }
+}

@@ -1,0 +1,111 @@
+.game {
+  padding: 0 20px;
+
+  @include tablet {
+    padding: 0 10px;
+  }
+  &-header {
+    margin-bottom: 64px;
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 8px;
+    @include tablet {
+      flex-wrap: wrap;
+    }
+  }
+  &-card {
+    position: relative;
+    border-radius: var(--border-radius);
+    background-color: var(--color-light);
+    transition: background-color var(--transition-duration) ease,
+      color var(--transition-duration) ease;
+    overflow: hidden;
+    @include tablet {
+      border-radius: 10px;
+    }
+    @include mobile {
+      @include hover {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+        .game-card__title,
+        .game-card__descr {
+          transform: translateY(-82px);
+        }
+        .game-card__btn {
+          bottom: 24px;
+        }
+        .game-card__image {
+          transform: translateY(-60px);
+        }
+      }
+    }
+    &__image {
+      margin-bottom: 62px;
+      transition: transform var(--transition-duration) ease;
+
+      @include mobile {
+        margin-bottom: 28px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+    &__title {
+      padding: 0 24px;
+      margin-bottom: 16px;
+      @include fluid-text(32, 20);
+      transition: transform var(--transition-duration) ease;
+
+      @include mobile {
+        margin-bottom: 8px;
+      }
+    }
+    &__descr {
+      font-family: var(--font-family-second);
+      padding: 0 24px 24px 24px;
+      max-width: 440px;
+      font-size: 16px;
+      @include fluid-text(16, 14);
+      font-weight: 500;
+      line-height: 1.6;
+      transition: transform var(--transition-duration) ease;
+
+      @include mobile {
+        line-height: 1.4;
+      }
+    }
+    &__btn {
+      position: absolute;
+      width: calc(100% - 48px);
+      left: 24px;
+      bottom: -100%;
+      display: flex;
+      padding: 20px 46px 20px 24px;
+      color: var(--color-light);
+      background-color: var(--color-accent);
+      border-radius: var(--border-radius);
+      text-transform: uppercase;
+      user-select: none;
+      cursor: pointer;
+      transition: bottom var(--transition-duration) ease;
+
+      @include tablet {
+        border-radius: 10px;
+      }
+      svg {
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--color-light);
+
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+  }
+}

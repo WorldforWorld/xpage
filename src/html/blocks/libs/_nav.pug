@@ -1,0 +1,10 @@
+- var navItems = [{'Играть':'#'}, {'Смотреть':'#'}, {'Учиться':'#'}, {'Мероприятия':'#'}]
+
+mixin nav(activePage='Home', classes='nav', items= navItems)
+    ul(class= classes)
+        each item in items
+            li.header__menu-item
+                each href, value in item
+                    a.header__menu-link(
+                        href= href
+                        class=(value === activePage ? "active" : ''))= value

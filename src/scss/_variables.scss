@@ -1,0 +1,25 @@
+:root {
+  --color-light: #ffffff;
+  --color-light-rbg: 255, 255, 255;
+  --color-gray: #ececec;
+  --color-gray-alt: #efefef;
+  --color-dark: #202020;
+  --color-dark-rbg: 32, 32, 32;
+  --color-accent: #f36722;
+  --color-learn: #2e8d43;
+
+  --border-radius: 20px;
+
+  --transition-duration: 0.2s;
+
+  --font-family-base: "DrukWideCyr", sans-serif;
+  --font-family-second: "Inter", sans-serif;
+
+  @include desktop {
+    --section-padding-y: 50px;
+  }
+
+  @include mobile {
+    --section-padding-y: 30px;
+  }
+}

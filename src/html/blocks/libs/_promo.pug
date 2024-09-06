@@ -1,0 +1,14 @@
+mixin promo(dataPromo)
+    .promo__image-list
+        each content in dataPromo.contents
+            .promo__image-item(class=content.isActive ? 'promo__image-item--active' : '')
+                img(src=content.src, alt="promo")
+                .promo__image-title 
+                    span=content.text
+    .promo__button-list
+        each button in dataPromo.buttons
+            span.promo__button-item=button
+                  svg(width='22.000000' height='15.000000' viewbox='0 0 22 15' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                    path(id='Vector 448' d='M11.35 4.28L11.35 0L22 7.5L11.35 15L11.35 10.71L0 10.71L0 4.28L11.35 4.28Z' fill='currentColor' fill-opacity='1.000000' fill-rule='evenodd')
+
+

@@ -1,0 +1,11 @@
+mixin header(page='Home')
+    header.header
+        .header__inner
+            if block 
+                block 
+            else 
+                +logo('./assets/images/logo.png', 'header__logo')
+                +navbar('header__menu hidden-mobile')
+                    +nav(page, 'header__menu-list')
+                +navbar-burger('header__menu-button')
+                +user('Геннадий П.','./assets/images/user.jpeg','header__user')
