@@ -1,0 +1,9 @@
+.copy {
+  @include fluid-text(12, 10);
+  line-height: 1.4;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+  @include hover {
+    color: var(--color-learn);
+  }
+}

@@ -1,0 +1,30 @@
+.qr {
+  display: flex;
+  width: 100%;
+  max-width: 352px;
+  min-width: 352px;
+  padding: 44px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  background-color: var(--color-light);
+  row-gap: 12px;
+  &__image {
+    margin-bottom: 24px;
+  }
+  &__title {
+    color: var(--color-text);
+    text-align: center;
+    font-family: var(--font-family-second);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+  &__descr {
+    color: var(--color-dark);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+}
