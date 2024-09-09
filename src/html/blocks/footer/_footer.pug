@@ -1,9 +1,22 @@
-mixin footer(...footerItems)
-    footer.bg-dark 
-        if block 
-            block 
-        else 
-            .row 
-                - for (var x=0; x<footerItems.length; x++)
-                    .col-4
-                        +nav('', 'nav dark flex-column p-3', footerItems[x])
+mixin footer()
+    footer.footer
+        .footer__inner
+            .footer__top
+                .footer__block.footer__block--left
+                    h2.footer__title Еще больше полезных материалов и видеоуроков в нашем приложении
+                    .app.footer__app
+                        ul.app__list
+                            li.app__item 
+                                a.app__link(href="#")
+                                    img(src="./assets/images/ios.png", alt="ios")
+                            li.app__item 
+                                a.app__link(href="#")
+                                    img(src="./assets/images/android.png", alt="android")
+                .footer__block
+                    .qr.footer__qr
+                        .qr__image 
+                            img(src="./assets/images/qr.jpeg", alt="qr")
+                        .qr__title iOS / Android
+                        .qr__descr Наведите камеру устройства на QR-код, чтобы скачать
+            .footer__bottom     
+                a.copy(href="#") сделано в xpage
