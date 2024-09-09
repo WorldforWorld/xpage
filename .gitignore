@@ -135,4 +135,4 @@ $RECYCLE.BIN/
 # Игнорирование файла package-lock.json
 # package-lock.json
 # Игнорирование папки dist
-dist
+# dist
