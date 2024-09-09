@@ -8,6 +8,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include tablet {
+    padding: 12px;
+  }
   &__image {
     position: absolute;
     left: 0;
@@ -37,12 +40,9 @@
   }
   &__list,
   &__title {
-    // position: absolute;
-    // left: 24px;
     position: relative;
   }
   &__title {
-    // top: 24px;
     margin-bottom: 27%;
     padding-bottom: 30px;
     max-width: 881px;
@@ -57,7 +57,6 @@
     column-gap: 4px;
     row-gap: 5px;
     max-width: 545px;
-    // bottom: 24px;
   }
   &__item {
     &-tiker {
@@ -77,6 +76,9 @@
     }
     background-color: var(--color-learn);
     padding: 24px;
+    @include tablet {
+      padding: 12px;
+    }
     .advantages__list,
     .advantages__title {
       position: static;
